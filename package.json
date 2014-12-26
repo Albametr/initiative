@@ -1,0 +1,29 @@
+{
+  "name": "initiative",
+  "version": "1.0.0",
+  "description": "initiative\r ==========",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Albametr/initiative.git"
+  },
+  "author": "Albametr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Albametr/initiative/issues"
+  },
+  "homepage": "https://github.com/Albametr/initiative",
+  "dependencies": {
+    "co-body": "^1.0.0",
+    "co-mocha": "^1.1.0",
+    "co-supertest": "0.0.7",
+    "config": "^1.9.0",
+    "koa": "^0.14.0",
+    "koa-router": "^3.8.0",
+    "mocha": "^2.1.0",
+    "supertest": "^0.15.0"
+  }
+}

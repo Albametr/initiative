@@ -12,7 +12,8 @@ Your browser does not support the HTML5 canvas tag.
 var images = [];
 var maxIndex = 10114;
 var ctx;
-for (var i = 10000; i < maxIndex; i = i + 3) {
+width = 1280;
+for (var i = 10000; i < maxIndex; i++) {
 	var imageSrc = 'Untitled-' + i + '.jpg';
 	var img = new Image();
     img.src = 'images/' + imageSrc;
@@ -22,8 +23,30 @@ for (var i = 10000; i < maxIndex; i = i + 3) {
 window.onload = function() {
     var canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
+    
+    canvas.onmousemove = function (e) {
+
+    	if (document.all)  { 
+    		// IE
+      		x = event.x + document.body.scrollLeft; 
+      		y = event.y + document.body.scrollTop; 
+    	} else {
+      		x = e.pageX;
+      		y = e.pageY;
+    	}
+
+    	var idx = parseInt(x / width * images.length);
+    	if (idx >= images.length)
+    		idx = images.length - 1;
+
+    	draw(idx);
+
+    };
+    
     draw(0);
 }
+
+
 
 function draw(index) {
 	if (index >= images.length)
@@ -34,7 +57,7 @@ function draw(index) {
 	var img = images[index];
     ctx.drawImage(img, 0, 0);
     
-    setTimeout(draw(index + 1), 1000);
+    //setTimeout(draw, 1000/24, index + 1);
 }
 
 </script>
